@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Recommendations</title>
+    <title>TravelBloom - Travel Recommendations</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,62 +15,77 @@
             <a href="#about">About Us</a>
             <a href="#contact">Contact Us</a>
         </div>
-    </nav>
-
-    <section id="home" class="search-container">
-        <h1>Explore Your Next Destination</h1>
-        <p>Search for beaches, temples, or countries to discover amazing recommendation results.</p>
-        <div>
+        <div class="search-controls">
             <input type="text" id="searchInput" class="search-box" placeholder="Enter keyword (e.g., beach, temple)...">
             <button class="search-btn" onclick="searchDestination()">Search</button>
             <button class="clear-btn" onclick="clearSearch()">Clear</button>
         </div>
+    </nav>
+
+    <section id="home" class="search-container">
+        <h1>Explore Your Next Dream Destination</h1>
+        <p>Welcome to TravelBloom! Your ultimate guide to finding the most breathtaking beaches, historic temples, and vibrant countries around the globe. Enter your keyword above to explore recommendations customized just for your next journey.</p>
     </section>
 
     <section class="results-section">
         <h2>Our Recommendations</h2>
         <div id="resultsGrid" class="results-grid">
-            <p id="placeholderText">Enter a search keyword to see beautiful travel destinations with images!</p>
+            <p id="placeholderText">Type "beach", "temple", or "country" in the search box above to reveal curated recommendations with stunning images!</p>
         </div>
     </section>
 
     <section id="about" class="info-section">
         <h2>About Our Company</h2>
-        <p>We are a dedicated team of travel enthusiasts aiming to deliver world-class recommendations. Our platform leverages smart search queries to provide you with the most breathtaking beaches, historic temples, and pristine countries to visit on your next vacation.</p>
+        <p>TravelBloom is a world-class travel consultancy agency established to bridge the gap between travelers and their dream vacation spots. We continuously analyze global trends to provide accurate, pristine, and high-quality destination insights.</p>
+        <p><strong>Guidance & Instructions for Team Members:</strong> All regional coordinators must update their destination logs on the first Monday of every month. Ensure all uploaded image links are highly responsive and descriptions maintain our corporate professional standard of clarity and hospitality.</p>
     </section>
 
-    <section id="contact" class="info-section" style="margin-bottom: 50px;">
+    <section id="contact" class="info-section" style="margin-bottom: 80px;">
         <h2>Contact Us</h2>
-        <p>Have questions or need custom travel consultation? Reach out to us directly!</p>
-        <p><strong>Email:</strong> contact@travelbloom.com | <strong>Phone:</strong> +1 (555) 019-2834</p>
+        <p>Have questions or want a customized itinerary package? Reach out to our customer support desk via the details below or drop us a direct message using the secure mail form.</p>
+        <p><strong>Email:</strong> support@travelbloom.com | <strong>Phone:</strong> +1 (555) 019-2834</p>
+        
+        <form class="contact-form" action="mailto:support@travelbloom.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we help you plan your travel?" required></textarea>
+            </div>
+            <button type="submit" class="form-btn">Send Email Message</button>
+        </form>
     </section>
 
     <script>
-        // Sample Destination Data Structure for Beaches, Temples, Countries
         const destinations = [
-            { name: "Bora Bora, French Polynesia", type: "beach", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600", desc: "Crystal clear turquoise waters and luxurious overwater bungalows." },
-            { name: "Maldives Islands", type: "beach", image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=600", desc: "A tropical paradise featuring sandy white shores and vivid coral reefs." },
-            { name: "Angkor Wat, Cambodia", type: "temple", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600", desc: "The largest historic religious monument in the world with stunning architectures." },
-            { name: "Kyoto Kinkaku-ji, Japan", type: "temple", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=600", desc: "The iconic Golden Pavilion temple surrounded by traditional Zen gardens." },
-            { name: "Switzerland", type: "country", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600", desc: "Known for its mesmerizing Alpine scenery, pristine lakes, and beautiful villages." },
-            { name: "Japan", type: "country", image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=600", desc: "Blending ancient heritage traditions with cutting-edge futuristic technology." }
+            { name: "Bora Bora, French Polynesia", type: "beach", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600", desc: "Features crystal clear turquoise waters, pristine white sands, and luxurious overwater bungalows." },
+            { name: "Maldives Islands", type: "beach", image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=600", desc: "A true tropical paradise featuring breathtaking sandy shores, sunny weather, and vivid coral reefs." },
+            { name: "Angkor Wat, Cambodia", type: "temple", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600", desc: "The largest ancient historic religious monument in the world with stunning classical Khmer architectures." },
+            { name: "Kyoto Kinkaku-ji, Japan", type: "temple", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=600", desc: "The famous iconic Golden Pavilion temple completely surrounded by breathtaking traditional Zen gardens." },
+            { name: "Switzerland Alps", type: "country", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600", desc: "Globally renowned for its mesmerizing Alpine mountain scenery, pristine lakes, and beautiful resort villages." },
+            { name: "Tokyo, Japan", type: "country", image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=600", desc: "A magnificent sovereign country perfectly blending ancient heritage traditions with cutting-edge futuristic technology." }
         ];
 
         function searchDestination() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             const grid = document.getElementById('resultsGrid');
-            grid.innerHTML = ''; // Reset Grid
+            grid.innerHTML = ''; 
 
             if (!query) {
-                grid.innerHTML = '<p style="color: red;">Please enter a search keyword first!</p>';
+                grid.innerHTML = '<p style="color: red; font-weight: bold;">Please type a search keyword first!</p>';
                 return;
             }
 
-            // Filter data matching 'beach', 'temple', or specific countries
             const filtered = destinations.filter(dest => dest.type.includes(query) || dest.name.toLowerCase().includes(query));
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<p>No matching destinations found. Try searching for "beach", "temple", or "japan".</p>';
+                grid.innerHTML = '<p>No matching recommendations found. Try searching for "beach", "temple", or "country".</p>';
                 return;
             }
 
@@ -91,7 +106,7 @@
         function clearSearch() {
             document.getElementById('searchInput').value = '';
             const grid = document.getElementById('resultsGrid');
-            grid.innerHTML = '<p id="placeholderText">Enter a search keyword to see beautiful travel destinations with images!</p>';
+            grid.innerHTML = '<p id="placeholderText">Type "beach", "temple", or "country" in the search box above to reveal curated recommendations with stunning images!</p>';
         }
     </script>
 </body>
