@@ -1,3 +1,3 @@
-# Express Book Review Application
+# Travel Recommendation Web Application
 
-This is the final project for the IBM Node.js and Express course.
+This is the final project for the Web Development course featuring travel recommendations for beaches, temples, and countries.
