@@ -1,6 +1,6 @@
 curl -s -X DELETE http://localhost:5000/customer/auth/review/1 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYWFnYW1hbCIsImlhdCI6MTc3OTg2ODAzM30.signature_placeholder"
-
-
 {
-  "message": "Reviews for the ISBN 1 posted by the user doaagamal have been deleted."
+  "message": "Review for ISBN 1 successfully deleted."
 }
+
+
