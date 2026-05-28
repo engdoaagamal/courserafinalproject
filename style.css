@@ -40,8 +40,9 @@ body {
     transition: color 0.3s;
 }
 
-.navbar-menu a:hover {
+.navbar-menu a:hover, .navbar-menu a.active {
     color: #3498db;
+    font-weight: bold;
 }
 
 /* Hero & Search Container */
@@ -53,16 +54,17 @@ body {
 }
 
 .search-container h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
 .search-container p {
     font-size: 18px;
-    margin-bottom: 25px;
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
 }
 
-/* Search Controls inside Navbar/Hero */
 .search-controls {
     display: flex;
     justify-content: center;
@@ -89,11 +91,6 @@ body {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s;
-}
-
-.search-btn:hover {
-    background-color: #2980b9;
 }
 
 .clear-btn {
@@ -105,11 +102,6 @@ body {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s;
-}
-
-.clear-btn:hover {
-    background-color: #c0392b;
 }
 
 /* Recommendations Grid */
@@ -118,19 +110,13 @@ body {
     text-align: center;
 }
 
-.results-section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
-
 .results-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 
 .card {
@@ -140,11 +126,6 @@ body {
     width: 320px;
     overflow: hidden;
     text-align: left;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .card img {
@@ -160,19 +141,12 @@ body {
 .card-content h3 {
     margin-bottom: 10px;
     color: #2c3e50;
-    font-size: 20px;
 }
 
-.card-content p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Content Sections (About & Contact) */
+/* Info Section (About & Contact) */
 .info-section {
     padding: 50px 30px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
     background: white;
     border-radius: 12px;
@@ -182,17 +156,39 @@ body {
 .info-section h2 {
     color: #2c3e50;
     margin-bottom: 20px;
-    font-size: 26px;
     border-bottom: 3px solid #3498db;
     padding-bottom: 10px;
     display: inline-block;
 }
 
-.info-section p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 15px;
+/* Team Grid Style */
+.team-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.team-member {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.team-member h4 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* Contact Form */
@@ -210,16 +206,10 @@ body {
     gap: 5px;
 }
 
-.form-group label {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
 .form-group input, .form-group textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 15px;
 }
 
 .form-btn {
@@ -229,11 +219,5 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s;
-}
-
-.form-btn:hover {
-    background-color: #34495e;
 }
