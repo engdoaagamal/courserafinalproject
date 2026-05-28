@@ -1,0 +1,12 @@
+curl -s http://localhost:5000/title/The%20Divine%20Comedy
+
+
+{
+  "booksbytitle": [
+    {
+      "isbn": "3",
+      "author": "Dante Alighieri",
+      "reviews": {}
+    }
+  ]
+}
